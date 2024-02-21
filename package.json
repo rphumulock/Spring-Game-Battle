@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "styles": "npx taildwind -i ./src/main/resources/static/styles/input.css -o ./src/main/resources/static/styles/output.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

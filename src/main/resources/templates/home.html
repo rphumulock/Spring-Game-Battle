@@ -1,46 +1,28 @@
 <!DOCTYPE html>
-<html data-theme="dim" lang="en"
-      xmlns:th="http://www.thymeleaf.org">
+<html data-theme="dim" lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:x-on="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tailwind CSS Layout</title>
+    <title>GB!</title>
     <link href="./styles/output.css" rel="stylesheet">
+    <script defer type="text/javascript" th:src="@{/webjars/htmx.org/2.0.0-alpha2/dist/htmx.min.js}"></script>
+    <script defer type="text/javascript" th:src="@{/webjars/alpinejs/3.13.5/dist/cdn.min.js}"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/@sudodevnull/datastar" type="module"></script>
-    <script src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script>
 </head>
 <body class="flex h-screen bg-base-100 text-base-content">
 
 <!-- Content -->
 <div class="flex-1 flex flex-col">
 
-    <button class="btn btn-primary" hx-trigger="click" hx-get="/games/stream-flux" hx-target="this">Load user details</button>
-
     <div>
-        <div>
-            <button
-                    class="btn btn-primary"
-                    id="contact_1"
-                    data-fetch-url="'/games/test1'"
-                    data-on-click="$$get">
-                Edit
-            </button>
-        </div>
-
-        <div data-merge-store='{"count":"123"}'>
-            <div>
-                <button class="btn btn-primary" data-on-click="$count++">
-                    Increment +
-                </button>
-                <button class="btn btn-primary" data-on-click="$count--">
-                    Decrement -
-                </button>
-                <input type="number" data-model="count" />
-            </div>
-        </div>
-
+        <button
+                class="btn btn-primary"
+                id="contact_1"
+                data-fetch-url="'/games/test2'"
+                data-on-click="$$get">
+            Edit
+        </button>
     </div>
-<!--    </div>-->
 
     <!-- Header -->
     <header th:replace="~{fragments/header::header}"></header>
@@ -50,10 +32,24 @@
 
     <!-- Main content -->
     <main class="flex flex-1 items-center justify-center p-4">
-        <div class="container mx-auto">
+        <div class="card w-96 bg-primary text-primary-content">
+            <div class="card-body">
+                <h2 class="card-title">Card title!</h2>
+                <p>If a dog chews shoes whose shoes does he choose?</p>
+                <div class="card-actions justify-end">
+                    <button class="btn btn-accent" hx-get="/games/battle" hx-target="this" hx-swap="outerHTML">Battle!</button>
 
+                </div>
+            </div>
         </div>
+
     </main>
+
+<!--    <div x-data="{ count: 0 }">-->
+<!--        <button class="btn btn-primary" x-on:click="count++">Increment</button>-->
+
+<!--        <span x-text="count"></span>-->
+<!--    </div>-->
 
 </div>
 

@@ -1,25 +1,5 @@
-<div th:fragment="battle" id="battle" class="grid grid-cols-[3fr,0.5fr,3fr] gap-2" xmlns:th="">
-    <div th:each="tempGame : ${games}">
-        <div class="bg-white rounded-lg shadow-lg justify-center m-auto h-80 w-3/4 p-5">
-            <h2 class="font-bold text-lg">Card 1</h2>
-            <button hx-get="/games/battle"
-                    hx-trigger="click"
-                    hx-target="#battle"
-                    hx-swap="outerHTML"
-            >
-                Click Me!
-            </button>
-        </div>
+<div th:fragment="battle" id="battle" class="grid grid-cols-2 gap-2" xmlns:th="">
+    <div  th:each="tempGame : ${games}" class="bg-white rounded-lg shadow-lg justify-center m-auto p-5">
+        <h2 class="font-bold text-lg">Card 1</h2>
     </div>
 </div>
-
-
-
-
-
-
-
-<!-- Middle Column for VS -->
-<!--<div class="flex items-center justify-center h-80 p-5">-->
-<!--    <span class="text-xl font-bold">VS</span>-->
-<!--</div>-->
